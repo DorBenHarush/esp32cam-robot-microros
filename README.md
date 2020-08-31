@@ -21,8 +21,14 @@ Usage:
 `./enviorment.sh -p esp32cam`
 * -p can be any freertos platform supported by [Micro-ros](https://github.com/micro-ROS/micro_ros_setup)
 
-Serial:
-`./configure.sh -a <app> -t serial -d <device_name>`
+# step 2: configure application
 
+Serial:
+`./configure.sh -a <app> -t serial -d <device_name>`                                                                                                                 
 UDP:
-`./configure_app.sh -a <app> -t udp -i <local_ip> -p <port_number>`
+`./configure_app.sh -a <app> -t udp -i <local_ip> -p <port_number>`                                                                                               
+Costumized apps should be added to `firmware/freertos_apps/apps/<my_app>`
+* `<my_app>/app.c`: This file contains the program.
+* `<my_app>/app-colcon.meta`: This file contains the micro-ROS app specific colcon configuration. Detailed info on how to configure the RMW via this file can be found [here](https://micro-ros.github.io/docs/tutorials/core/microxrcedds_rmw_configuration/).
+* Header files (".h").
+
